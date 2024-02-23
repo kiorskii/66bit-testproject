@@ -1,0 +1,19 @@
+.navigation {
+  height: 77px;
+  padding: 0 180px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation__list {
+  display: flex;
+  column-gap: 16px;
+  color: #B0B0B0;
+
+}
+
+.navigation__link {
+  color: #B0B0B0;
+  font-size: 18px;
+  font-weight: 500;
+}

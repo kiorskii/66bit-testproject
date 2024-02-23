@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  padding: 0 180px;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+  box-shadow: 0 5px 8px rgba(57, 113, 164, 0.25);
+}
+
+.header__info {
+  display: flex;
+  column-gap: 48px;
+}
+
+.header__contacts {
+  display: flex;
+  align-items: center;
+  column-gap: 64px;
+  font-size: 18px;
+}
+
+.header__button {
+  width: 55px;
+  height: 26px;
+  border: none;
+  background-color: #155da4;
+  border-radius: 30px;
+  box-shadow: inset 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.button__icon {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+}
