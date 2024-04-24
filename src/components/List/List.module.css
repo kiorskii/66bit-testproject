@@ -1,0 +1,33 @@
+.list {
+  padding: 0 180px;
+  font-size: 20px;
+}
+
+.list__headers {
+  height: 80px;
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 28px;
+  color: #B0B0B0;
+
+}
+
+.list__header {
+  width: 100%;
+}
+
+.list__header:first-child {
+  max-width: 725px;
+}
+
+.list__header:nth-child(2) {
+  max-width: 400px;
+}
+
+.list__header:nth-child(3) {
+  max-width: 280px;
+}
+
+.list__header:nth-child(4) {
+  max-width: 150px;
+}

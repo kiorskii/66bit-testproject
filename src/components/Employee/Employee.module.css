@@ -1,0 +1,26 @@
+.employee {
+  height: 80px;
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 28px;
+}
+
+.employee li {
+  width: 100%;
+}
+
+.employee__name {
+  max-width: 725px;
+}
+
+.employee__post {
+  max-width: 400px;
+}
+
+.employee__telephone {
+  max-width: 280px;
+}
+
+.employee__birthday {
+  max-width: 150px;
+}
