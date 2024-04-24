@@ -2,3 +2,37 @@
   box-sizing: border-box;
   font-family: "Raleway", sans-serif !important;
 }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+.light {
+  --bg-color: #fff;
+  --text-color: #000;
+  --second-color: #F2F2F2;
+  --third-color: #fff;
+}
+
+.dark {
+  --bg-color: #292929;
+  --text-color: #fff;
+  --second-color: #3E3E3E;
+  --third-color: #292929;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.link:hover {
+  user-select: none;
+  color: #155DA4;
+  transform: all 0.3s ease-in-out;
+}
+
+.link:active {
+  opacity: 0.7;
+}

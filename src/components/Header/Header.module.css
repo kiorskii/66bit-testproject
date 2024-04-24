@@ -21,6 +21,8 @@
 }
 
 .header__button {
+  position: relative;
+  cursor: pointer;
   width: 55px;
   height: 26px;
   border: none;
@@ -29,9 +31,27 @@
   box-shadow: inset 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.button__icon {
+.button__icon::after {
+  margin: 3px;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
   background-color: #fff;
+  background-position: center;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
   width: 20px;
   height: 20px;
   border-radius: 15px;
+  transition: transform .25s ease-in-out;
+}
+
+.light::after {
+  background-image: url(/src/assets/Moon.svg);
+}
+
+.dark::after {
+  background-image: url(/src/assets/sun.svg);
+  transform: translateX(-28px);
 }

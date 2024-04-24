@@ -1,6 +1,8 @@
+import { useTheme } from '../../contexts/ThemeContext';
 import styles from './Header.module.css';
 
 const Header = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -8,12 +10,11 @@ const Header = () => {
       </div>
       <div className={styles.header__info}>
         <div className={styles.header__contacts}>
-          <p className={styles.header__phone}>+7 343 290 84 76</p>
-          <p className={styles.header__email}>info@66bit.ru</p>
+          <a className='link' href='tel:+7 343 290 84 76'>+7 343 290 84 76</a>
+          <a className='link' href='mailto:info@66bit.ru'>info@66bit.ru</a>
         </div>
-        <button className={styles.header__button}>
-          <div className={styles.button__icon}>
-            <img src="/src/assets/Moon.svg" alt="switch" />
+        <button onClick={toggleTheme} className={styles.header__button}>
+          <div className={styles.button__icon + ' ' + styles[theme]}>
           </div>
         </button>
       </div>
