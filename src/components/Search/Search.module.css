@@ -106,9 +106,13 @@
   height: 45px;
 }
 
-/*
-Pop-up
-*/
+/* Popup */
+
+.search__criteria {
+  display: flex;
+  column-gap: 12px;
+  cursor: pointer;
+}
 
 .popup {
   position: absolute;
@@ -133,7 +137,6 @@ Pop-up
   flex-direction: column;
   row-gap: 16px;
 }
-
 
 .post__label {
   display: flex;

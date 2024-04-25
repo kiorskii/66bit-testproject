@@ -1,6 +1,6 @@
 import styles from './Employee.module.css'
 
-const Employee = ({ data }) => {
+const Employee = ({ data }: { data: any }) => {
   return (
     <ul className={styles.employee}>
       <li className={styles.employee__name}>

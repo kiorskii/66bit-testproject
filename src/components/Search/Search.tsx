@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import styles from './Search.module.css';
 import { fetchEmployees } from '../../services/api';
+import { useEmployee } from '../../contexts/EmployeeContext';
+import Popup from '../Popup/Popup';
+
+
+const filtersData = {
+  position: ['Backend-разработчик', 'Frontend-разработчик', 'Аналитик', 'Менеджер', 'Дизайнер', 'Fullstack'],
+  gender: ['Мужчина', 'Женщина'],
+  stack: ['C#', 'React', 'Java', 'PHP', 'Figma', 'Word']
+};
 
 const Search = () => {
-
   // Pop-up functionality
   const [activePopup, setActivePopup] = useState("none");
 
@@ -22,9 +30,11 @@ const Search = () => {
 
   // Filters/Sorting functionality
   const [searchQuery, setSearchQuery] = useState("");
-  const [positionFilter, setPositionFilter] = useState("");
-  const [genderFilter, setGenderFilter] = useState("");
+  const [positionFilter, setPositionFilter] = useState([]);
+  const [genderFilter, setGenderFilter] = useState([]);
   const [stackFilter, setStackFilter] = useState([]);
+
+  const { setEmployees, setFilters }: any = useEmployee();
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -51,43 +61,29 @@ const Search = () => {
     }
   };
 
-  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    switch (name) {
-      case 'position':
-        setPositionFilter(prev => prev === value ? "" : value);
-        break;
-      case 'gender':
-        setGenderFilter(prev => prev === value ? "" : value);
-        break;
-      default:
-        break;
-    }
-    // Если текущее значение равно кликнутому, снимаем выбор, иначе устанавливаем новое
-  };
-
-
   const handleSearchSubmit = async () => {
-    console.log(searchQuery, positionFilter, genderFilter, stackFilter);
-    const filteredData = await fetchEmployees(1, 20, genderFilter, positionFilter, stackFilter.join(','));
-    console.log(filteredData); // Обработка данных или передача их куда-либо
+
+    const newFilters = {
+      genderFilter: [...genderFilter],
+      positionFilter: [...positionFilter],
+      stackFilter: [...stackFilter],
+      searchQuery: searchQuery
+    };
+
+    const filteredData = await fetchEmployees(1, 20, newFilters.genderFilter, newFilters.positionFilter, newFilters.stackFilter, newFilters.searchQuery);
+
+    setEmployees(filteredData);
+    setFilters(newFilters);
   };
+
 
   // Filters Delete and render logic
   const renderSelectedFilters = () => {
-    const filters = [];
+    const filters: string[] = [];
+    filters.push(...positionFilter);
 
-    // Добавляем выбранную позицию, если она есть
-    if (positionFilter) {
-      filters.push(positionFilter);
-    }
+    filters.push(...genderFilter);
 
-    // Добавляем выбранные фильтры пола
-    if (genderFilter) {
-      filters.push(genderFilter);
-    }
-
-    // Добавляем выбранные фильтры стека технологий
     filters.push(...stackFilter);
 
 
@@ -102,18 +98,15 @@ const Search = () => {
     ));
   };
 
-  const handleDeleteFilter = (filter) => {
-    // Удаление позиции, если она выбрана
-    if (positionFilter === filter) {
-      setPositionFilter("");
+  const handleDeleteFilter = (filter: any) => {
+    if (positionFilter.includes(filter)) {
+      setPositionFilter(positionFilter.filter(f => f !== filter));
     }
 
-    // Удаление фильтра пола
-    if (genderFilter === filter) {
-      setGenderFilter("");
+    if (genderFilter.includes(filter)) {
+      setGenderFilter(genderFilter.filter(f => f !== filter));
     }
 
-    // Удаление фильтра стека технологий
     if (stackFilter.includes(filter)) {
       setStackFilter(stackFilter.filter(f => f !== filter));
     }
@@ -142,7 +135,7 @@ const Search = () => {
                       <li key={index} className={styles.post__item}>
                         <label className={`${styles.post__label} link`} >
                           {positionName}
-                          <input type="radio" className={styles.customCheckbox} value={positionName} name="position" onChange={handleRadioChange} checked={positionFilter === positionName} />
+                          <input type="checkbox" className={styles.customCheckbox} value={positionName} name="position" onChange={handleCheckboxChange} />
                         </label>
                       </li>
                     ))}
@@ -162,7 +155,7 @@ const Search = () => {
                       <li key={index} className={styles.post__item}>
                         <label className={`${styles.post__label} link`}>
                           {genderName}
-                          <input type="radio" className={styles.customCheckbox} value={genderName} name="gender" onChange={handleRadioChange} checked={genderFilter === genderName} />
+                          <input type="checkbox" className={styles.customCheckbox} value={genderName} name="gender" onChange={handleCheckboxChange} />
                         </label>
                       </li>
                     ))}
@@ -178,7 +171,7 @@ const Search = () => {
               <div className={styles.popup}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>
                   <ul className={styles.post__list}>
-                    {['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'].map((stackName, index) => (
+                    {['C#', 'React', 'Java', 'PHP', 'Figma', 'Word'].map((stackName, index) => (
                       <li key={index} className={styles.post__item}>
                         <label className={`${styles.post__label} link`}>
                           {stackName}

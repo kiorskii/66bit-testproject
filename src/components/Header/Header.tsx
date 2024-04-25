@@ -2,7 +2,7 @@ import { useTheme } from '../../contexts/ThemeContext';
 import styles from './Header.module.css';
 
 const Header = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme }: any = useTheme();
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
