@@ -1,28 +1,57 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Employee from '../Employee/Employee';
 import styles from './List.module.css';
 import { fetchEmployees } from '../../services/api.tsx';
 
 interface EmployeeData {
-  id: string;
+  id: number;
   fullName: string;
   position: string;
   phone: string;
   birthDate: string;
 }
 
+
 const List = () => {
   const [employees, setEmployees] = useState<EmployeeData[]>([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  const loadingRef = useRef(null);
+
+  async function loadData() {
+    if (loading || !hasMore) return;
+
+    setLoading(true);
+    const newEmployees = await fetchEmployees(page, 20);
+    if (newEmployees.length === 0 || newEmployees.length < 20) {
+      setHasMore(false);
+    }
+    setEmployees(prev => [...prev, ...newEmployees]);
+    setPage(prev => prev + 1);
+    setLoading(false);
+  }
 
 
   useEffect(() => {
-    async function loadData() {
-      const data = await fetchEmployees();
-      setEmployees(data);
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && !loading && hasMore) {
+          loadData();
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (loadingRef.current) {
+      observer.observe(loadingRef.current);
     }
 
-    loadData();
-  }, []);
+    return () => observer.disconnect();
+  }, [loading, hasMore]);
+
+
 
   return (
     <>
@@ -40,6 +69,11 @@ const List = () => {
         ) : (
           <p>Загрузка данных о сотрудниках...</p>
         )}
+        {hasMore ? (
+          <div ref={loadingRef} className={styles.loading}>
+            {loading && <p>Загрузка...</p>}
+          </div>
+        ) : ("")}
       </div>
     </>
   );

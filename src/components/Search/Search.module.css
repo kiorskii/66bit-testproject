@@ -19,6 +19,7 @@
   font-size: 20px;
   font-weight: 400;
   background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .search__criterias {
@@ -57,6 +58,13 @@
   padding: 10px;
   padding-left: 30px;
   border-radius: 5px;
+}
+
+.search__filter:hover {
+  cursor: pointer;
+  background-color: #155DA4;
+  color: var(--second-color);
+  transition: all .2s ease-in-out;
 }
 
 .search__filter:not(:nth-child(2)) {
