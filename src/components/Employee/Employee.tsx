@@ -4,7 +4,7 @@ const Employee = ({ data }: { data: any }) => {
   return (
     <ul className={styles.employee}>
       <li className={styles.employee__name}>
-        <p>{data.name}</p>
+        <p>{data.id} {data.name}</p>
       </li>
       <li className={styles.employee__post}>
         <p>{data.position}</p>

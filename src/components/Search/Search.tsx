@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Search.module.css';
-import { fetchEmployees } from '../../services/api';
 import { useEmployee } from '../../contexts/EmployeeContext';
-import Popup from '../Popup/Popup';
 
 
-const filtersData = {
-  position: ['Backend-разработчик', 'Frontend-разработчик', 'Аналитик', 'Менеджер', 'Дизайнер', 'Fullstack'],
-  gender: ['Мужчина', 'Женщина'],
-  stack: ['C#', 'React', 'Java', 'PHP', 'Figma', 'Word']
-};
 
 const Search = () => {
   // Pop-up functionality
@@ -29,51 +22,42 @@ const Search = () => {
 
 
   // Filters/Sorting functionality
+  const {
+    setFilters, setPage, setHasMore
+  } = useEmployee();
+
   const [searchQuery, setSearchQuery] = useState("");
   const [positionFilter, setPositionFilter] = useState([]);
   const [genderFilter, setGenderFilter] = useState([]);
   const [stackFilter, setStackFilter] = useState([]);
 
-  const { setEmployees, setFilters }: any = useEmployee();
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = (event) => {
     const { name, value, checked } = event.target;
-    const updateFilter = (filters: string[]) => {
-      return checked ? [...filters, value] : filters.filter(item => item !== value);
-    };
-
     switch (name) {
       case 'position':
-        setPositionFilter(updateFilter(positionFilter));
+        setPositionFilter(updateFilter(positionFilter, value, checked));
         break;
       case 'gender':
-        setGenderFilter(updateFilter(genderFilter));
+        setGenderFilter(updateFilter(genderFilter, value, checked));
         break;
       case 'stack':
-        setStackFilter(updateFilter(stackFilter));
-        break;
-      default:
+        setStackFilter(updateFilter(stackFilter, value, checked));
         break;
     }
   };
 
-  const handleSearchSubmit = async () => {
+  const updateFilter = (filters, value, checked) => {
+    return checked ? [...filters, value] : filters.filter(f => f !== value);
+  };
 
-    const newFilters = {
-      genderFilter: [...genderFilter],
-      positionFilter: [...positionFilter],
-      stackFilter: [...stackFilter],
-      searchQuery: searchQuery
-    };
-
-    const filteredData = await fetchEmployees(1, 20, newFilters.genderFilter, newFilters.positionFilter, newFilters.stackFilter, newFilters.searchQuery);
-
-    setEmployees(filteredData);
-    setFilters(newFilters);
+  const handleSearchSubmit = () => {
+    setFilters({ genderFilter, positionFilter, stackFilter, searchQuery });
+    setPage(1);
+    setHasMore(true);
   };
 
 
@@ -85,7 +69,6 @@ const Search = () => {
     filters.push(...genderFilter);
 
     filters.push(...stackFilter);
-
 
 
     return filters.map(filter => (
@@ -135,7 +118,12 @@ const Search = () => {
                       <li key={index} className={styles.post__item}>
                         <label className={`${styles.post__label} link`} >
                           {positionName}
-                          <input type="checkbox" className={styles.customCheckbox} value={positionName} name="position" onChange={handleCheckboxChange} />
+                          <input type="checkbox"
+                            className={styles.customCheckbox}
+                            value={positionName}
+                            name="position"
+                            onChange={handleCheckboxChange}
+                            checked={positionFilter.includes(positionName)} />
                         </label>
                       </li>
                     ))}
@@ -155,7 +143,12 @@ const Search = () => {
                       <li key={index} className={styles.post__item}>
                         <label className={`${styles.post__label} link`}>
                           {genderName}
-                          <input type="checkbox" className={styles.customCheckbox} value={genderName} name="gender" onChange={handleCheckboxChange} />
+                          <input type="checkbox"
+                            className={styles.customCheckbox}
+                            value={genderName}
+                            name="gender"
+                            onChange={handleCheckboxChange}
+                            checked={genderFilter.includes(genderName)} />
                         </label>
                       </li>
                     ))}
@@ -175,7 +168,11 @@ const Search = () => {
                       <li key={index} className={styles.post__item}>
                         <label className={`${styles.post__label} link`}>
                           {stackName}
-                          <input type="checkbox" className={styles.customCheckbox} value={stackName} name="stack" onChange={handleCheckboxChange} />
+                          <input type="checkbox"
+                            className={styles.customCheckbox}
+                            value={stackName} name="stack"
+                            onChange={handleCheckboxChange}
+                            checked={stackFilter.includes(stackName)} />
                         </label>
                       </li>
                     ))}

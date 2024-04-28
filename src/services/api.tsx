@@ -47,7 +47,7 @@ async function fetchEmployees(page = 1, count = 20, genders = [], positions = []
     return data;
   } catch (error) {
     console.error("Error: ", error);
-    return [];
+    return ["No results"];
   }
 }
 
