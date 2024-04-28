@@ -1,22 +1,19 @@
-import Header from "./components/Header/Header"
-import List from "./components/List/List"
-import Navigation from "./components/Navigation/Navigation"
-import Search from "./components/Search/Search"
-import { EmployeeProvider } from "./contexts/EmployeeContext"
-import { ThemeProvider } from "./contexts/ThemeContext"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Main from './screens/Main';
+import Card from './screens/Card';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
-
   return (
-    <EmployeeProvider>
-      <ThemeProvider>
-        <Header />
-        <Navigation />
-        <Search />
-        <List />
-      </ThemeProvider>
-    </EmployeeProvider>
-  )
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/employee/:id" element={<Card />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,8 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './Employee.module.css'
 
 const Employee = ({ data }: { data: any }) => {
+
+  const navigate = useNavigate();
+
+  const handleEmployeeClick = () => {
+    navigate(`/employee/${data.id}`);
+  };
+
   return (
-    <ul className={styles.employee}>
+    <ul className={styles.employee} onClick={handleEmployeeClick}>
       <li className={styles.employee__name}>
         <p>{data.id} {data.name}</p>
       </li>

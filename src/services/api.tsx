@@ -51,5 +51,20 @@ async function fetchEmployees(page = 1, count = 20, genders = [], positions = []
   }
 }
 
+async function fetchEmployee(id = undefined) {
+  const url = new URL('https://frontend-test-api.stk8s.66bit.ru/api/Employee/' + id);
+  try {
+    const response = await fetch(url.toString());
+    if (!response.ok) {
+      throw new Error('Network error while fetching employees');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error: ", error);
+    return ["404 / Not Found :("];
+  }
+}
 
-export { fetchEmployees };
+
+export { fetchEmployees, fetchEmployee };

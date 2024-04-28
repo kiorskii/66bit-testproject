@@ -5,6 +5,11 @@
   padding-bottom: 28px;
 }
 
+.employee:hover {
+  background-color: #F2F2F2;
+  transition: all 0.3s ease-in-out;
+}
+
 .employee li {
   width: 100%;
 }

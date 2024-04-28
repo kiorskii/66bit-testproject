@@ -19,7 +19,7 @@ export const EmployeeProvider = ({ children }) => {
   });
 
   const loadData = async () => {
-    if (!hasMore || loading) return;  // Добавлено условие, чтобы избежать повторных загрузок
+    if (!hasMore || loading) return;
     setLoading(true);
 
     const data = await fetchEmployees(page, 20, filters.genderFilter, filters.positionFilter, filters.stackFilter, filters.searchQuery);
