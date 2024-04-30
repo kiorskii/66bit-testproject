@@ -1,5 +1,5 @@
 .list {
-  padding: 0 180px;
+  padding: 0 168px;
   font-size: 20px;
 }
 
@@ -9,6 +9,8 @@
   padding-top: 32px;
   padding-bottom: 28px;
   color: #B0B0B0;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .list__header {

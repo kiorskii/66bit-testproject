@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useEmployee } from '../../contexts/EmployeeContext';
 import Employee from '../Employee/Employee';
 import styles from './List.module.css';

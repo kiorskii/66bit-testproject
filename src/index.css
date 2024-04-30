@@ -27,6 +27,25 @@ a {
   color: var(--text-color);
 }
 
+.button {
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 48px;
+  background-color: rgb(21, 93, 164);
+  border: none;
+  border-radius: 8px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  opacity: 0.5;
+}
+
 .link:hover {
   user-select: none;
   color: #155DA4;

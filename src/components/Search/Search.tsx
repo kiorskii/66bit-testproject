@@ -188,7 +188,7 @@ const Search = () => {
           <p className={styles.search__pretitle}>Выбранные фильтры: </p>
           {renderSelectedFilters()}
         </ul>
-        <button onClick={handleSearchSubmit} className={styles.search__button}>Найти</button>
+        <button onClick={handleSearchSubmit} className="button">Найти</button>
       </div>
     </>
   )

@@ -1,3 +1,5 @@
+import { convertData } from "./convert";
+
 const positionMap = {
   'Backend-разработчик': 'Backend',
   'Frontend-разработчик': 'Frontend',
@@ -44,6 +46,9 @@ async function fetchEmployees(page = 1, count = 20, genders = [], positions = []
       throw new Error('Network error while fetching employees');
     }
     const data = await response.json();
+
+    data.forEach(convertData);
+
     return data;
   } catch (error) {
     console.error("Error: ", error);
@@ -59,6 +64,7 @@ async function fetchEmployee(id = undefined) {
       throw new Error('Network error while fetching employees');
     }
     const data = await response.json();
+
     return data;
   } catch (error) {
     console.error("Error: ", error);

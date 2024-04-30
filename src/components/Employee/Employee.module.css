@@ -3,10 +3,13 @@
   display: flex;
   padding-top: 32px;
   padding-bottom: 28px;
+  cursor: pointer;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .employee:hover {
-  background-color: #F2F2F2;
+  background-color: var(--second-color);
   transition: all 0.3s ease-in-out;
 }
 

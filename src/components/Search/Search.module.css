@@ -94,18 +94,6 @@
   margin-right: 40px;
 }
 
-.search__button {
-  cursor: pointer;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 12px 48px;
-  background-color: rgb(21, 93, 164);
-  border: none;
-  border-radius: 8px;
-  height: 45px;
-}
-
 /* Popup */
 
 .search__criteria {

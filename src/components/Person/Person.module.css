@@ -1,0 +1,73 @@
+.person {
+  padding: 0 180px;
+}
+
+.top {
+  display: flex;
+  column-gap: 42px;
+  border-bottom: 1px solid #F2F2F2;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.person__image {
+  width: 163px;
+  height: 163px;
+  border-radius: 50%;
+}
+
+.person__name {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.person__position {
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.person__stack {
+  display: flex;
+  column-gap: 16px;
+}
+
+.person__stackItem {
+  width: fit-content;
+  border-radius: 5px;
+  padding: 10px 21.5px;
+  background-color: var(--second-color);
+}
+
+.person__stackItem:hover {
+  opacity: 0.8;
+  transition: .2s ease-in-out;
+}
+
+.person__title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.person__infoList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.person__infoItem {
+  font-size: 24px;
+  display: flex;
+
+}
+
+.person__infoLabel {
+  font-weight: 500;
+  width: 300px;
+}
+
+.person__infoValue {
+  font-weight: 400;
+}

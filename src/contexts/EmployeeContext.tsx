@@ -23,11 +23,11 @@ export const EmployeeProvider = ({ children }) => {
     setLoading(true);
 
     const data = await fetchEmployees(page, 20, filters.genderFilter, filters.positionFilter, filters.stackFilter, filters.searchQuery);
-    console.log(data)
     if (data.length < 20) setHasMore(false);
     if (page === 1) {
       if (data.length === 0) {
-        setEmployees([{ id: 0, name: 'Мы никого не нашли :(' }]);
+        setEmployees([{ id: 404, name: 'Мы никого не нашли :(' }]);
+        setLoading(false);
         return
       }
       setEmployees(data);
