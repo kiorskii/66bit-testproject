@@ -10,7 +10,7 @@ const Main = () => {
       <Header />
       <Navigation />
       <Search />
-      <List />
+      {/* <List /> */}
     </EmployeeProvider>
   )
 }

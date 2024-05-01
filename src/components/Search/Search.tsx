@@ -109,7 +109,7 @@ const Search = () => {
         <ul className={styles.search__criterias}>
           <li className={styles.search__criteria} onClick={() => togglePopup('position')}>
             <p className="criteria__name link">Должность</p>
-            <img src="/src/assets/down_arrow.svg" alt="" />
+            <img className={styles.criteria__icon} src="/src/assets/down_arrow.svg" alt="" />
             {activePopup === 'position' && (
               <div className={styles.popup + ' ' + styles.popup_position}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>
@@ -134,9 +134,9 @@ const Search = () => {
           </li>
           <li className={styles.search__criteria} onClick={() => togglePopup('gender')}>
             <p className="criteria__name link">Пол</p>
-            <img src="/src/assets/down_arrow.svg" alt="" />
+            <img className={styles.criteria__icon} src="/src/assets/down_arrow.svg" alt="" />
             {activePopup === 'gender' && (
-              <div className={styles.popup}>
+              <div className={styles.popup + ' ' + styles.popup_position2}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>
                   <ul className={styles.post__list}>
                     {['Мужчина', 'Женщина'].map((genderName, index) => (
@@ -159,9 +159,9 @@ const Search = () => {
           </li>
           <li className={styles.search__criteria} onClick={() => togglePopup('stack')}>
             <p className="criteria__name link">Стек технологий</p>
-            <img src="/src/assets/down_arrow.svg" alt="" />
+            <img className={styles.criteria__icon} src="/src/assets/down_arrow.svg" alt="" />
             {activePopup === 'stack' && (
-              <div className={styles.popup}>
+              <div className={styles.popup + ' ' + styles.popup_position3}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>
                   <ul className={styles.post__list}>
                     {['C#', 'React', 'Java', 'PHP', 'Figma', 'Word'].map((stackName, index) => (
@@ -184,12 +184,13 @@ const Search = () => {
         </ul>
       </div>
       <div className={styles.search__info}>
+        <p className={styles.search__pretitle}>Выбранные фильтры: </p>
         <ul className={styles.search__filters}>
-          <p className={styles.search__pretitle}>Выбранные фильтры: </p>
+
           {renderSelectedFilters()}
         </ul>
-        <button onClick={handleSearchSubmit} className="button">Найти</button>
-      </div>
+        <button onClick={handleSearchSubmit} className={styles.search__button + " button"}>Найти</button>
+      </div >
     </>
   )
 }

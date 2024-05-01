@@ -17,3 +17,41 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 900px) {
+  .navigation {
+    padding: 0 72px;
+  }
+
+  .navigation__link {
+    font-size: 14px;
+  }
+
+  .navigation__list {
+    display: flex;
+    column-gap: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navigation {
+    padding: 0 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .navigation {
+    padding: 0 24px;
+    height: 44px;
+  }
+
+  .navigation__list {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  .navigation__link {
+    font-size: 12px;
+  }
+}

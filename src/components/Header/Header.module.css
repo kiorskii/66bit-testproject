@@ -55,3 +55,50 @@
   background-image: url(/src/assets/sun.svg);
   transform: translateX(-28px);
 }
+
+@media screen and (max-width: 900px) {
+  .header {
+    padding: 0 72px;
+  }
+
+  .header__contacts {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding: 0 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .header {
+    padding: 0 24px;
+    height: 54px;
+  }
+
+  .header__img {
+    width: 52px;
+  }
+
+  .header__button {
+    width: 47px;
+    height: 22px;
+  }
+
+  .button__icon::after {
+    margin: 3px;
+    content: "";
+    position: absolute;
+    background-size: 15px 15px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .dark::after {
+    background-image: url(/src/assets/sun.svg);
+    transform: translateX(-23px);
+  }
+}
