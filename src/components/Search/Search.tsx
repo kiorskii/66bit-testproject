@@ -109,7 +109,9 @@ const Search = () => {
         <ul className={styles.search__criterias}>
           <li className={styles.search__criteria} onClick={() => togglePopup('position')}>
             <p className="criteria__name link">Должность</p>
-            <img className={styles.criteria__icon} src="/src/assets/down_arrow.svg" alt="" />
+            <img
+              className={`${styles.criteria__icon} ${activePopup === 'position' ? styles.active : ''}`}
+              src="/src/assets/down_arrow.svg" alt="" />
             {activePopup === 'position' && (
               <div className={styles.popup + ' ' + styles.popup_position}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>
@@ -134,7 +136,9 @@ const Search = () => {
           </li>
           <li className={styles.search__criteria} onClick={() => togglePopup('gender')}>
             <p className="criteria__name link">Пол</p>
-            <img className={styles.criteria__icon} src="/src/assets/down_arrow.svg" alt="" />
+            <img
+              className={`${styles.criteria__icon} ${activePopup === 'gender' ? styles.active : ''}`}
+              src="/src/assets/down_arrow.svg" alt="" />
             {activePopup === 'gender' && (
               <div className={styles.popup + ' ' + styles.popup_position2}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>
@@ -159,7 +163,9 @@ const Search = () => {
           </li>
           <li className={styles.search__criteria} onClick={() => togglePopup('stack')}>
             <p className="criteria__name link">Стек технологий</p>
-            <img className={styles.criteria__icon} src="/src/assets/down_arrow.svg" alt="" />
+            <img
+              className={`${styles.criteria__icon} ${activePopup === 'stack' ? styles.active : ''}`}
+              src="/src/assets/down_arrow.svg" alt="" />
             {activePopup === 'stack' && (
               <div className={styles.popup + ' ' + styles.popup_position3}>
                 <div className={styles.popup__content} onClick={handlePopupClick}>

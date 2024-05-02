@@ -16,6 +16,8 @@
   color: #B0B0B0;
   font-size: 18px;
   font-weight: 500;
+  white-space: nowrap;
+
 }
 
 @media screen and (max-width: 900px) {
@@ -24,7 +26,7 @@
   }
 
   .navigation__link {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .navigation__list {
@@ -36,6 +38,13 @@
 @media screen and (max-width: 500px) {
   .navigation {
     padding: 0 48px;
+  }
+
+  .navigation__name {
+    font-size: 14px;
+    max-width: 14vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -49,9 +58,12 @@
   .navigation__list {
     display: flex;
     column-gap: 12px;
+
   }
 
-  .navigation__link {
-    font-size: 12px;
+  .navigation__name {
+    max-width: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

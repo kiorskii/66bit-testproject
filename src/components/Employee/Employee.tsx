@@ -12,7 +12,7 @@ const Employee = ({ data }: { data: any }) => {
   return (
     <ul className={styles.employee} onClick={handleEmployeeClick}>
       <li className={styles.employee__name}>
-        <p>{data.id} {data.name}</p>
+        <p>{data.name}</p>
       </li>
       <li className={styles.employee__post}>
         <p>{data.position}</p>

@@ -16,3 +16,11 @@
   border-radius: 8px;
   background-color: #155DA4;
 }
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 28px;
+  }
+
+
+}

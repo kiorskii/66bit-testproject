@@ -96,6 +96,14 @@
   margin-left: auto;
 }
 
+.criteria__icon {
+  transition: transform 0.3s ease;
+}
+
+.criteria__icon.active {
+  transform: rotate(180deg);
+}
+
 /* Popup */
 
 .search__criteria {
@@ -221,7 +229,7 @@
 
   .criteria__icon {
     width: 12px;
-    height: 16px;
+    height: 14px;
   }
 }
 

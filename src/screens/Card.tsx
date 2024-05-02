@@ -14,6 +14,9 @@ const Card = () => {
 
   useEffect(() => {
     async function fetchEmployeeDetails(id) {
+      if (isNaN(id)) {
+        return;
+      }
       const data = await fetchEmployee(id);
 
       convertData(data);

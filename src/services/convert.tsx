@@ -1,4 +1,4 @@
-function convertData(el) {
+function convertData(el: any) {
   const months = {
     "января": "01", "февраля": "02", "марта": "03",
     "апреля": "04", "мая": "05", "июня": "06",
@@ -21,8 +21,10 @@ function convertData(el) {
       switch (index) {
         case 0:
           el.birthdate = `${day}.${month}.${year}`;
+          break
         case 1:
           el.dateOfEmployment = `${day}.${month}.${year}`;
+          break
       }
     })
   }

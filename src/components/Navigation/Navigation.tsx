@@ -12,6 +12,7 @@ const Navigation = ({ employeeName }) => {
           <Link to={"/"} className={styles.navigation__link}>
             Главная
           </Link>
+
         </li>
         <p>{">"}</p>
         <li className={styles.navigation__item}>
@@ -22,7 +23,7 @@ const Navigation = ({ employeeName }) => {
         {id &&
           <>
             <p>{">"}</p>
-            <li className={styles.navigation__item}>
+            <li className={styles.navigation__item + ' ' + styles.navigation__name}>
               <a href='#' className={styles.navigation__link}>
                 {employeeName}
               </a>

@@ -1,5 +1,4 @@
 .employee {
-  height: 80px;
   display: flex;
   padding-top: 32px;
   padding-bottom: 28px;
@@ -27,8 +26,18 @@
 
 .employee__telephone {
   max-width: 280px;
+  white-space: nowrap;
 }
 
 .employee__birthday {
   max-width: 150px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 320px) {
+  .employee {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--second-color);
+    column-gap: 16px;
+  }
 }

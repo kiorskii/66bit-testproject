@@ -71,3 +71,107 @@
 .person__infoValue {
   font-weight: 400;
 }
+
+
+@media screen and (max-width: 900px) {
+  .person {
+    padding: 0 48px;
+  }
+
+  .person__image {
+    width: 125px;
+    height: 125px;
+  }
+
+  .person__name {
+    font-size: 24px;
+  }
+
+  .person__position {
+    font-size: 18px;
+  }
+
+  .person__stackItem {
+    font-size: 14px;
+  }
+
+  .person__title {
+    font-size: 24px;
+  }
+
+  .person__infoItem {
+    font-size: 18px;
+  }
+
+  .top {
+    column-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .person__name {
+    font-size: 20px;
+  }
+
+  .person__position {
+    font-size: 14px;
+  }
+
+  .person__stackItem {
+    font-size: 12px;
+  }
+
+  .person__title {
+    font-size: 16px;
+  }
+
+  .person__infoItem {
+    font-size: 12px;
+  }
+
+  .person__infoItem {
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .person {
+    padding: 0 24px;
+  }
+
+  .person__image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .person__name {
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+
+  .person__position {
+    margin-bottom: 0;
+  }
+
+  .person__stack {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    column-gap: 8px;
+  }
+
+  .top {
+    column-gap: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 66px;
+  }
+
+  .person__title {
+    margin-bottom: 16px;
+  }
+
+  .person__infoValue {
+    white-space: nowrap;
+  }
+}
