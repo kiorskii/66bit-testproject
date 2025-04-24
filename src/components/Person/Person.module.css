@@ -72,6 +72,57 @@
   font-weight: 400;
 }
 
+.deleteButton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.deleteButton:hover {
+  background-color: darkred;
+}
+
+/* Модальное окно для подтверждения удаления */
+.confirmModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmModalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.confirmModalContent button {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirmModalContent button:nth-child(1) {
+  background-color: red;
+  color: white;
+}
+
+.confirmModalContent button:nth-child(2) {
+  background-color: gray;
+  color: white;
+}
+
 
 @media screen and (max-width: 900px) {
   .person {

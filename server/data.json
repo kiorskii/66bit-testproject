@@ -1,0 +1,1321 @@
+[
+  {
+    "id": 100,
+    "name": "Давыдов Ярослав Андреевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/7.jpg",
+    "phone": "+7 (771) 630-32-",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "01 января 2002",
+    "dateOfEmployment": "02 февраля 2002"
+  },
+  {
+    "id": 99,
+    "name": "Попова Алина Евгеньевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/27.jpg",
+    "phone": "+7 (962) 964-74-32",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "23 апреля 1990",
+    "dateOfEmployment": "25 января 2018"
+  },
+  {
+    "id": 98,
+    "name": "Веселова София Андреевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/13.jpg",
+    "phone": "+7 927 754-95-16",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "19 июня 1111",
+    "dateOfEmployment": "19 октября 1111"
+  },
+  {
+    "id": 97,
+    "name": "Филатов Антон Данилович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/21.jpg",
+    "phone": "+7 (931) 510-13-35",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "C#"
+    ],
+    "birthdate": "20 декабря 1993",
+    "dateOfEmployment": "05 июля 2022"
+  },
+  {
+    "id": 96,
+    "name": "Красильникова Вера Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/8.jpg",
+    "phone": "+7 (939) 124-49-96",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "13 июля 1993",
+    "dateOfEmployment": "09 декабря 2017"
+  },
+  {
+    "id": 95,
+    "name": "Богданова Римма Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/22.jpg",
+    "phone": "+7 (934) 335-05-65",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "07 февраля 1990",
+    "dateOfEmployment": "27 сентября 2016"
+  },
+  {
+    "id": 94,
+    "name": "Лыткин Эдуард Алексеевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/43.jpg",
+    "phone": "+7 (986) 053-52-71",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "11 марта 1989",
+    "dateOfEmployment": "19 марта 2017"
+  },
+  {
+    "id": 93,
+    "name": "Никонов Олег Артёмович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/9.jpg",
+    "phone": "+7 (985) 808-55-05",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "30 июня 1989",
+    "dateOfEmployment": "04 августа 2018"
+  },
+  {
+    "id": 92,
+    "name": "Александрова Евгения Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/15.jpg",
+    "phone": "+7 (980) 908-33-97",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "29 марта 1997",
+    "dateOfEmployment": "13 января 2019"
+  },
+  {
+    "id": 91,
+    "name": "Суворова Нина Дмитриевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/2.jpg",
+    "phone": "+7 (976) 977-10-16",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "19 июня 1997",
+    "dateOfEmployment": "29 января 2018"
+  },
+  {
+    "id": 90,
+    "name": "Трофимов Владислав Артёмович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/29.jpg",
+    "phone": "+7 (928) 070-98-26",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "05 июля 1996",
+    "dateOfEmployment": "10 сентября 2020"
+  },
+  {
+    "id": 89,
+    "name": "Соколов Максим Андреевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/11.jpg",
+    "phone": "+7 (902) 979-34-44",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "22 февраля 1996",
+    "dateOfEmployment": "16 июня 2020"
+  },
+  {
+    "id": 88,
+    "name": "Некрасов Михаил Игоревич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/22.jpg",
+    "phone": "+7 (928) 570-04-77",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "19 июня 1996",
+    "dateOfEmployment": "28 мая 2021"
+  },
+  {
+    "id": 87,
+    "name": "Рыбакова Раиса Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/16.jpg",
+    "phone": "+7 (952) 886-34-10",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "C#"
+    ],
+    "birthdate": "12 января 1996",
+    "dateOfEmployment": "30 мая 2022"
+  },
+  {
+    "id": 86,
+    "name": "Селиверстов Сергей Игоревич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/23.jpg",
+    "phone": "+7 (946) 769-54-60",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "19 ноября 1991",
+    "dateOfEmployment": "04 ноября 2018"
+  },
+  {
+    "id": 85,
+    "name": "Козлов Андрей Игоревич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/29.jpg",
+    "phone": "+7 (968) 574-76-21",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "PHP",
+      "C#"
+    ],
+    "birthdate": "09 октября 1998",
+    "dateOfEmployment": "24 июля 2021"
+  },
+  {
+    "id": 84,
+    "name": "Назаров Иван Данилович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/5.jpg",
+    "phone": "+7 (945) 514-43-63",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP",
+      "Java"
+    ],
+    "birthdate": "01 апреля 1997",
+    "dateOfEmployment": "25 апреля 2019"
+  },
+  {
+    "id": 83,
+    "name": "Савельева Клавдия Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/12.jpg",
+    "phone": "+7 (959) 368-45-94",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "PHP"
+    ],
+    "birthdate": "29 мая 1985",
+    "dateOfEmployment": "11 марта 2015"
+  },
+  {
+    "id": 82,
+    "name": "Кузьмин Владимир Сергеевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/6.jpg",
+    "phone": "+7 (913) 553-71-85",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "PHP"
+    ],
+    "birthdate": "25 июня 1991",
+    "dateOfEmployment": "26 октября 2017"
+  },
+  {
+    "id": 81,
+    "name": "Назарова Ксения Сергеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/15.jpg",
+    "phone": "+7 (921) 284-37-03",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "02 октября 1997",
+    "dateOfEmployment": "18 августа 2020"
+  },
+  {
+    "id": 80,
+    "name": "Журавлева Елизавета Дмитриевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/12.jpg",
+    "phone": "+7 (907) 644-38-89",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "24 марта 2003",
+    "dateOfEmployment": "04 сентября 2023"
+  },
+  {
+    "id": 79,
+    "name": "Терентьева Ирина Ивановна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/17.jpg",
+    "phone": "+7 (927) 572-48-89",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "13 февраля 1987",
+    "dateOfEmployment": "30 мая 2015"
+  },
+  {
+    "id": 78,
+    "name": "Ситникова Анна Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/11.jpg",
+    "phone": "+7 (923) 360-08-18",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "25 октября 1995",
+    "dateOfEmployment": "22 июля 2022"
+  },
+  {
+    "id": 77,
+    "name": "Савин Константин Алексеевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/24.jpg",
+    "phone": "+7 (948) 945-00-19",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "PHP"
+    ],
+    "birthdate": "20 апреля 1986",
+    "dateOfEmployment": "19 октября 2016"
+  },
+  {
+    "id": 76,
+    "name": "Юдин Антон Валентинович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/9.jpg",
+    "phone": "+7 (925) 215-18-95",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "C#",
+      "PHP"
+    ],
+    "birthdate": "08 сентября 1996",
+    "dateOfEmployment": "26 ноября 2015"
+  },
+  {
+    "id": 75,
+    "name": "Алексеева Анастасия Александровна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/26.jpg",
+    "phone": "+7 (954) 021-87-53",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "03 мая 1984",
+    "dateOfEmployment": "27 октября 2014"
+  },
+  {
+    "id": 74,
+    "name": "Белова Раиса Дмитриевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/1.jpg",
+    "phone": "+7 (969) 828-25-25",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "C#",
+      "PHP"
+    ],
+    "birthdate": "07 августа 2000",
+    "dateOfEmployment": "11 мая 2022"
+  },
+  {
+    "id": 73,
+    "name": "Дроздов Альберт Андреевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/2.jpg",
+    "phone": "+7 (973) 263-10-56",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "06 мая 1990",
+    "dateOfEmployment": "23 ноября 2016"
+  },
+  {
+    "id": 72,
+    "name": "Ефремова Римма Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/4.jpg",
+    "phone": "+7 (977) 041-44-74",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "10 декабря 2000",
+    "dateOfEmployment": "27 мая 2019"
+  },
+  {
+    "id": 71,
+    "name": "Ильин Михаил Андреевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/4.jpg",
+    "phone": "+7 (908) 440-27-69",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "16 сентября 1986",
+    "dateOfEmployment": "08 апреля 2015"
+  },
+  {
+    "id": 70,
+    "name": "Миронов Артём Валентинович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/5.jpg",
+    "phone": "+7 (950) 444-59-75",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "C#"
+    ],
+    "birthdate": "20 марта 1989",
+    "dateOfEmployment": "16 октября 2014"
+  },
+  {
+    "id": 69,
+    "name": "Федосеев Аркадий Валентинович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/20.jpg",
+    "phone": "+7 (977) 579-75-10",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "19 апреля 2003",
+    "dateOfEmployment": "11 августа 2023"
+  },
+  {
+    "id": 68,
+    "name": "Матвеева Любовь Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/38.jpg",
+    "phone": "+7 (966) 530-18-49",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "20 марта 1985",
+    "dateOfEmployment": "22 октября 2015"
+  },
+  {
+    "id": 67,
+    "name": "Сысоева Ольга Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/47.jpg",
+    "phone": "+7 (958) 071-13-67",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "06 апреля 1992",
+    "dateOfEmployment": "27 июля 2018"
+  },
+  {
+    "id": 66,
+    "name": "Голубева Зоя Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/39.jpg",
+    "phone": "+7 (932) 949-16-15",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "23 июня 1992",
+    "dateOfEmployment": "25 сентября 2020"
+  },
+  {
+    "id": 65,
+    "name": "Абрамова Наталья Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/13.jpg",
+    "phone": "+7 (919) 557-89-11",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "22 июля 1989",
+    "dateOfEmployment": "04 декабря 2019"
+  },
+  {
+    "id": 64,
+    "name": "Ефимова Лариса Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/8.jpg",
+    "phone": "+7 (929) 709-72-19",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "C#"
+    ],
+    "birthdate": "07 июня 1995",
+    "dateOfEmployment": "09 апреля 2018"
+  },
+  {
+    "id": 63,
+    "name": "Сысоева Евгения Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/15.jpg",
+    "phone": "+7 (947) 516-53-14",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "27 марта 1999",
+    "dateOfEmployment": "19 марта 2021"
+  },
+  {
+    "id": 62,
+    "name": "Белякова Галина Даниловна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/31.jpg",
+    "phone": "+7 (929) 923-21-27",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "19 ноября 1989",
+    "dateOfEmployment": "18 января 2017"
+  },
+  {
+    "id": 61,
+    "name": "Карпова Кира Ивановна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/22.jpg",
+    "phone": "+7 (963) 725-29-96",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "08 февраля 1996",
+    "dateOfEmployment": "27 января 2017"
+  },
+  {
+    "id": 60,
+    "name": "Бобылев Олег Игоревич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/3.jpg",
+    "phone": "+7 (977) 955-48-37",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "16 февраля 2000",
+    "dateOfEmployment": "30 июня 2023"
+  },
+  {
+    "id": 59,
+    "name": "Константинов Лаврентий Игоревич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/27.jpg",
+    "phone": "+7 (966) 069-65-25",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP",
+      "Java"
+    ],
+    "birthdate": "11 сентября 1998",
+    "dateOfEmployment": "18 июля 2017"
+  },
+  {
+    "id": 58,
+    "name": "Пахомова София Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/36.jpg",
+    "phone": "+7 (961) 445-39-17",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "26 марта 1990",
+    "dateOfEmployment": "18 января 2016"
+  },
+  {
+    "id": 57,
+    "name": "Абрамов Станислав Дмитриевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/8.jpg",
+    "phone": "+7 (993) 996-57-36",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "29 июня 1989",
+    "dateOfEmployment": "16 января 2018"
+  },
+  {
+    "id": 56,
+    "name": "Ершова Нина Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/35.jpg",
+    "phone": "+7 (905) 168-09-29",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "10 мая 1992",
+    "dateOfEmployment": "06 августа 2021"
+  },
+  {
+    "id": 55,
+    "name": "Самсонова Елизавета Андреевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/50.jpg",
+    "phone": "+7 (918) 601-31-15",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "15 мая 1993",
+    "dateOfEmployment": "11 апреля 2018"
+  },
+  {
+    "id": 54,
+    "name": "Давыдова Вероника Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/34.jpg",
+    "phone": "+7 (921) 914-29-67",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "05 марта 2001",
+    "dateOfEmployment": "15 декабря 2023"
+  },
+  {
+    "id": 53,
+    "name": "Дементьев Анатолий Александрович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/19.jpg",
+    "phone": "+7 (916) 722-29-06",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "C#",
+      "PHP"
+    ],
+    "birthdate": "19 января 1987",
+    "dateOfEmployment": "10 мая 2014"
+  },
+  {
+    "id": 52,
+    "name": "Силина Виктория Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/14.jpg",
+    "phone": "+7 (944) 543-90-54",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP",
+      "Java",
+      "C#"
+    ],
+    "birthdate": "22 августа 1999",
+    "dateOfEmployment": "08 февраля 2020"
+  },
+  {
+    "id": 51,
+    "name": "Михайлов Василий Александрович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/3.jpg",
+    "phone": "+7 (919) 831-10-34",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "10 декабря 1990",
+    "dateOfEmployment": "25 октября 2019"
+  },
+  {
+    "id": 50,
+    "name": "Григорьев Виталий Валентинович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/3.jpg",
+    "phone": "+7 (910) 535-38-30",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "02 сентября 1991",
+    "dateOfEmployment": "09 июня 2020"
+  },
+  {
+    "id": 49,
+    "name": "Пестов Сергей Дмитриевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/1.jpg",
+    "phone": "+7 (922) 644-27-09",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP",
+      "Java",
+      "C#"
+    ],
+    "birthdate": "30 ноября 1993",
+    "dateOfEmployment": "21 апреля 2014"
+  },
+  {
+    "id": 48,
+    "name": "Беляев Алексей Артёмович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/25.jpg",
+    "phone": "+7 (957) 578-14-70",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "14 октября 1987",
+    "dateOfEmployment": "18 февраля 2017"
+  },
+  {
+    "id": 47,
+    "name": "Герасимова Дарья Игоревна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/43.jpg",
+    "phone": "+7 (961) 755-62-22",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "06 июля 1992",
+    "dateOfEmployment": "14 марта 2022"
+  },
+  {
+    "id": 46,
+    "name": "Кузьмина София Игоревна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/50.jpg",
+    "phone": "+7 (966) 959-77-40",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "03 ноября 1999",
+    "dateOfEmployment": "25 сентября 2020"
+  },
+  {
+    "id": 45,
+    "name": "Сергеева Тамара Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/19.jpg",
+    "phone": "+7 (961) 648-48-77",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "12 февраля 1987",
+    "dateOfEmployment": "06 июля 2015"
+  },
+  {
+    "id": 44,
+    "name": "Комарова Анжелика Сергеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/20.jpg",
+    "phone": "+7 (949) 813-59-41",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "15 июня 1993",
+    "dateOfEmployment": "18 апреля 2018"
+  },
+  {
+    "id": 43,
+    "name": "Никифорова София Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/26.jpg",
+    "phone": "+7 (969) 678-59-12",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "02 марта 1997",
+    "dateOfEmployment": "24 апреля 2019"
+  },
+  {
+    "id": 42,
+    "name": "Морозов Вячеслав Евгеньевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/34.jpg",
+    "phone": "+7 (983) 198-87-91",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP",
+      "Java"
+    ],
+    "birthdate": "05 ноября 2001",
+    "dateOfEmployment": "17 декабря 2023"
+  },
+  {
+    "id": 41,
+    "name": "Михайлова Вера Андреевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/42.jpg",
+    "phone": "+7 (933) 324-11-42",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "26 апреля 2004",
+    "dateOfEmployment": "26 февраля 2023"
+  },
+  {
+    "id": 40,
+    "name": "Романова Анжелика Андреевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/32.jpg",
+    "phone": "+7 (920) 038-08-45",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "19 января 1993",
+    "dateOfEmployment": "04 декабря 2016"
+  },
+  {
+    "id": 39,
+    "name": "Семенова Валерия Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/6.jpg",
+    "phone": "+7 (944) 649-25-53",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "19 декабря 1988",
+    "dateOfEmployment": "14 мая 2014"
+  },
+  {
+    "id": 38,
+    "name": "Мельников Игорь Евгеньевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/20.jpg",
+    "phone": "+7 (961) 839-80-03",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "09 апреля 1994",
+    "dateOfEmployment": "29 марта 2014"
+  },
+  {
+    "id": 37,
+    "name": "Волкова Дарья Ивановна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/43.jpg",
+    "phone": "+7 (912) 694-59-83",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "14 марта 2003",
+    "dateOfEmployment": "15 ноября 2022"
+  },
+  {
+    "id": 36,
+    "name": "Брагина Арина Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/7.jpg",
+    "phone": "+7 (915) 138-15-79",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "C#"
+    ],
+    "birthdate": "12 февраля 2001",
+    "dateOfEmployment": "31 марта 2023"
+  },
+  {
+    "id": 35,
+    "name": "Миронова Оксана Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/13.jpg",
+    "phone": "+7 (938) 333-16-21",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "16 августа 1999",
+    "dateOfEmployment": "15 марта 2020"
+  },
+  {
+    "id": 34,
+    "name": "Никонова Вера Сергеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/37.jpg",
+    "phone": "+7 (939) 237-06-74",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "08 июля 1991",
+    "dateOfEmployment": "12 сентября 2019"
+  },
+  {
+    "id": 33,
+    "name": "Фомина Валентина Викторовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/33.jpg",
+    "phone": "+7 (936) 727-22-28",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "27 марта 1996",
+    "dateOfEmployment": "09 ноября 2022"
+  },
+  {
+    "id": 32,
+    "name": "Николаев Даниил Алексеевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/49.jpg",
+    "phone": "+7 (978) 514-68-41",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "28 октября 1990",
+    "dateOfEmployment": "05 декабря 2019"
+  },
+  {
+    "id": 31,
+    "name": "Миронов Владимир Данилович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/20.jpg",
+    "phone": "+7 (976) 963-33-50",
+    "gender": "Мужчина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "27 февраля 1992",
+    "dateOfEmployment": "01 апреля 2015"
+  },
+  {
+    "id": 30,
+    "name": "Лапин Иван Дмитриевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/9.jpg",
+    "phone": "+7 (928) 146-08-00",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "05 января 1995",
+    "dateOfEmployment": "25 февраля 2018"
+  },
+  {
+    "id": 29,
+    "name": "Назаров Дмитрий Иванович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/1.jpg",
+    "phone": "+7 (986) 685-93-16",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "02 мая 1994",
+    "dateOfEmployment": "26 января 2017"
+  },
+  {
+    "id": 28,
+    "name": "Миронова Кира Ивановна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/16.jpg",
+    "phone": "+7 (953) 191-99-34",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "12 октября 1998",
+    "dateOfEmployment": "05 мая 2023"
+  },
+  {
+    "id": 27,
+    "name": "Колесников Сергей Андреевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/43.jpg",
+    "phone": "+7 (993) 295-53-99",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "08 декабря 1994",
+    "dateOfEmployment": "05 января 2015"
+  },
+  {
+    "id": 26,
+    "name": "Тимофеев Альберт Викторович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/13.jpg",
+    "phone": "+7 (954) 559-83-42",
+    "gender": "Мужчина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "20 марта 1990",
+    "dateOfEmployment": "11 января 2017"
+  },
+  {
+    "id": 25,
+    "name": "Поляков Евгений Дмитриевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/13.jpg",
+    "phone": "+7 (990) 902-44-59",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "08 октября 1987",
+    "dateOfEmployment": "07 декабря 2016"
+  },
+  {
+    "id": 24,
+    "name": "Воронцова Оксана Андреевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/14.jpg",
+    "phone": "+7 (933) 449-15-61",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "08 января 2000",
+    "dateOfEmployment": "19 мая 2023"
+  },
+  {
+    "id": 23,
+    "name": "Князева Тамара Даниловна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/23.jpg",
+    "phone": "+7 (989) 512-57-40",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "28 ноября 1989",
+    "dateOfEmployment": "10 мая 2014"
+  },
+  {
+    "id": 22,
+    "name": "Гордеев Юрий Евгеньевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/7.jpg",
+    "phone": "+7 (910) 015-07-76",
+    "gender": "Мужчина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "11 ноября 1987",
+    "dateOfEmployment": "19 октября 2014"
+  },
+  {
+    "id": 21,
+    "name": "Шашкова Анна Сергеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/48.jpg",
+    "phone": "+7 (922) 284-98-68",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP",
+      "Java"
+    ],
+    "birthdate": "24 октября 2000",
+    "dateOfEmployment": "08 января 2019"
+  },
+  {
+    "id": 20,
+    "name": "Королева Раиса Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/7.jpg",
+    "phone": "+7 (961) 490-88-41",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "24 июня 1996",
+    "dateOfEmployment": "10 апреля 2016"
+  },
+  {
+    "id": 19,
+    "name": "Ермакова Марина Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/28.jpg",
+    "phone": "+7 (989) 505-55-48",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "20 апреля 1990",
+    "dateOfEmployment": "14 декабря 2017"
+  },
+  {
+    "id": 18,
+    "name": "Иванова Любовь Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/13.jpg",
+    "phone": "+7 (934) 821-66-03",
+    "gender": "Женщина",
+    "position": "Аналитик",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "03 декабря 1997",
+    "dateOfEmployment": "11 сентября 2021"
+  },
+  {
+    "id": 17,
+    "name": "Дорофеев Фёдор Валентинович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/16.jpg",
+    "phone": "+7 (960) 900-14-27",
+    "gender": "Мужчина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java",
+      "PHP"
+    ],
+    "birthdate": "03 мая 2000",
+    "dateOfEmployment": "02 мая 2019"
+  },
+  {
+    "id": 16,
+    "name": "Николаева Алина Валентиновна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/13.jpg",
+    "phone": "+7 (990) 071-04-59",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java"
+    ],
+    "birthdate": "04 ноября 1989",
+    "dateOfEmployment": "26 марта 2019"
+  },
+  {
+    "id": 15,
+    "name": "Зуева Светлана Ивановна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/26.jpg",
+    "phone": "+7 (951) 294-31-54",
+    "gender": "Женщина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "01 октября 2000",
+    "dateOfEmployment": "27 января 2021"
+  },
+  {
+    "id": 14,
+    "name": "Кошелева Евгения Сергеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/35.jpg",
+    "phone": "+7 (959) 126-42-99",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "08 октября 1993",
+    "dateOfEmployment": "27 июля 2015"
+  },
+  {
+    "id": 13,
+    "name": "Смирнов Андрей Алексеевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/31.jpg",
+    "phone": "+7 (995) 279-89-54",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "01 марта 1995",
+    "dateOfEmployment": "20 июня 2016"
+  },
+  {
+    "id": 12,
+    "name": "Ширяев Андрей Игоревич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/49.jpg",
+    "phone": "+7 (973) 736-92-51",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "20 октября 2003",
+    "dateOfEmployment": "10 мая 2022"
+  },
+  {
+    "id": 11,
+    "name": "Фомин Олег Данилович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/2.jpg",
+    "phone": "+7 (950) 267-59-38",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "22 июля 1996",
+    "dateOfEmployment": "08 июня 2018"
+  },
+  {
+    "id": 10,
+    "name": "Силин Артём Евгеньевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/4.jpg",
+    "phone": "+7 (991) 258-28-49",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "22 апреля 1990",
+    "dateOfEmployment": "05 января 2016"
+  },
+  {
+    "id": 9,
+    "name": "Степанова Надежда Евгеньевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/16.jpg",
+    "phone": "+7 (921) 390-09-80",
+    "gender": "Женщина",
+    "position": "Менеджер",
+    "stack": [
+      "Word"
+    ],
+    "birthdate": "09 сентября 1998",
+    "dateOfEmployment": "20 июля 2019"
+  },
+  {
+    "id": 8,
+    "name": "Евсеева Жанна Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/4.jpg",
+    "phone": "+7 (942) 689-34-01",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "PHP"
+    ],
+    "birthdate": "13 июня 1987",
+    "dateOfEmployment": "05 декабря 2017"
+  },
+  {
+    "id": 7,
+    "name": "Рогов Егор Викторович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/4.jpg",
+    "phone": "+7 (956) 118-71-91",
+    "gender": "Мужчина",
+    "position": "Frontend-разработчик",
+    "stack": [
+      "React"
+    ],
+    "birthdate": "05 марта 1994",
+    "dateOfEmployment": "29 ноября 2021"
+  },
+  {
+    "id": 6,
+    "name": "Терентьева Вероника Игоревна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/11.jpg",
+    "phone": "+7 (989) 712-34-53",
+    "gender": "Женщина",
+    "position": "Backend-разработчик",
+    "stack": [
+      "Java"
+    ],
+    "birthdate": "07 января 1999",
+    "dateOfEmployment": "08 сентября 2023"
+  },
+  {
+    "id": 5,
+    "name": "Князев Степан Артёмович",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/47.jpg",
+    "phone": "+7 (966) 333-88-03",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "10 апреля 1995",
+    "dateOfEmployment": "07 января 2024"
+  },
+  {
+    "id": 4,
+    "name": "Селиверстова Любовь Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/45.jpg",
+    "phone": "+7 (939) 708-77-82",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "02 февраля 1998",
+    "dateOfEmployment": "10 октября 2020"
+  },
+  {
+    "id": 3,
+    "name": "Гордеев Виктор Евгеньевич",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/male/28.jpg",
+    "phone": "+7 (902) 805-17-34",
+    "gender": "Мужчина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "03 сентября 1999",
+    "dateOfEmployment": "29 мая 2022"
+  },
+  {
+    "id": 2,
+    "name": "Ширяева Ангелина Алексеевна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/50.jpg",
+    "phone": "+7 (965) 304-95-74",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "20 июля 1995",
+    "dateOfEmployment": "31 июля 2014"
+  },
+  {
+    "id": 1,
+    "name": "Артемьева Людмила Артёмовна",
+    "photo": "http://frontend-test-api.stk8s.66bit.ru/photos/female/18.jpg",
+    "phone": "+7 (907) 435-82-25",
+    "gender": "Женщина",
+    "position": "Дизайнер",
+    "stack": [
+      "Figma"
+    ],
+    "birthdate": "21 марта 1995",
+    "dateOfEmployment": "15 апреля 2023"
+  }
+]

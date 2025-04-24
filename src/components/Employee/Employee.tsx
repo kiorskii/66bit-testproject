@@ -20,8 +20,8 @@ const Employee = ({ data }: { data: any }) => {
       <li className={styles.employee__telephone}>
         <p>{data.phone}</p>
       </li>
-      <li className={styles.employee__birthday}>
-        <p>{data.birthdate}</p>
+      <li className={styles.employee__dateofEmployment}>
+        <p>{data.dateOfEmployment}</p>
       </li>
     </ul>
   );

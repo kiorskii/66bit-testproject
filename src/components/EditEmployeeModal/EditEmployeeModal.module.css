@@ -1,0 +1,57 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);  /* Полупрозрачный фон */
+  display: none; /* Скрываем модальное окно по умолчанию */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.open {
+  display: flex; /* Показываем модальное окно, когда оно открыто */
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modalContent h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modalActions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.modalActions button:hover {
+  background-color: #0056b3;
+}
+
+.modalActions button[type="button"] {
+  background-color: #ccc;
+}
+
+.modalActions button[type="button"]:hover {
+  background-color: #999;
+}

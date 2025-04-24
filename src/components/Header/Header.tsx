@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import styles from './Header.module.css';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Header = () => {
   const { theme, toggleTheme }: any = useTheme();
+  const { user, logout } = useAuth(); 
+
+
   return (
     <header className={styles.header}>
       <Link to={'/'} className={styles.header__logo}>
@@ -18,6 +22,14 @@ const Header = () => {
           <div className={styles.button__icon + ' ' + styles[theme]}>
           </div>
         </button>
+        <Link to="/add-employee">
+        <button>Добавить сотрудника</button>
+      </Link>
+        {user && (
+        <button onClick={logout} className={styles.logout}>
+          Выйти
+        </button>
+      )}
       </div>
     </header>
   )

@@ -47,6 +47,7 @@
   transition: transform .25s ease-in-out;
 }
 
+
 .light::after {
   background-image: url(/src/assets/Moon.svg);
 }

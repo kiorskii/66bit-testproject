@@ -23,7 +23,8 @@ const stackMap = {
   'Word': 'Word'
 };
 async function fetchEmployees(page = 1, count = 20, genders = [], positions = [], stack = [], name = "") {
-  const url = new URL('https://frontend-test-api.stk8s.66bit.ru/api/Employee');
+  const url = new URL('http://localhost:3001/api/Employee');
+  const token = localStorage.getItem('token');
   url.searchParams.append("Page", page.toString());
   url.searchParams.append("Count", count.toString());
   if (name) url.searchParams.append("Name", name);
@@ -41,7 +42,9 @@ async function fetchEmployees(page = 1, count = 20, genders = [], positions = []
   });
 
   try {
-    const response = await fetch(url.toString());
+    const response = await fetch(url.toString(), {        
+    headers: { Authorization: `Bearer ${token}` }
+});
     if (!response.ok) {
       throw new Error('Network error while fetching employees');
     }
@@ -57,9 +60,13 @@ async function fetchEmployees(page = 1, count = 20, genders = [], positions = []
 }
 
 async function fetchEmployee(id = undefined) {
-  const url = new URL('https://frontend-test-api.stk8s.66bit.ru/api/Employee/' + id);
+  const url = new URL('http://localhost:3001/api/Employee/' + id);
+  const token = localStorage.getItem('token');
+
   try {
-    const response = await fetch(url.toString());
+    const response = await fetch(url.toString(), {
+      headers: { Authorization: `Bearer ${token}` }
+      });
     if (!response.ok) {
       throw new Error('Network error while fetching employees');
     }
@@ -72,5 +79,26 @@ async function fetchEmployee(id = undefined) {
   }
 }
 
+const updateEmployee = async (id: number, updatedData: any) => {
+  const token = localStorage.getItem('token');
+  try {
+    const response = await fetch(`http://localhost:3001/api/Employee/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(updatedData)
+    });
+    if (!response.ok) {
+      throw new Error('Failed to update employee');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error: ", error);
+    throw error;
+  }
+};
 
-export { fetchEmployees, fetchEmployee };
+export { fetchEmployees, fetchEmployee, updateEmployee };
