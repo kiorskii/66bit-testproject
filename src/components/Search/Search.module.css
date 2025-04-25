@@ -228,8 +228,8 @@
   }
 
   .criteria__icon {
-    width: 12px;
-    height: 14px;
+    width: 12px !important;
+    height: 14px !important;
   }
 }
 

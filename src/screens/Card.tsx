@@ -5,6 +5,7 @@ import Person from '../components/Person/Person';
 import { useEffect, useState } from 'react';
 import { fetchEmployee } from '../services/api';
 import { convertData } from '../services/convert';
+import Footer from '../components/Footer/Footer';
 
 const Card = () => {
 
@@ -30,8 +31,11 @@ const Card = () => {
   return (
     <>
       <Header />
+      <main className="page-content">
       <Navigation employeeName={employee?.name} />
       <Person employee={employee} />
+      </main>
+      <Footer />
     </>
   );
 }

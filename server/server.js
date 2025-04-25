@@ -4,9 +4,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const PORT = 3001;
+const { parse } = require('csv-parse/sync');    
+
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.text({ type: 'text/*' })); 
 
 function convertDateToText(dateStr) {
   const months = [
@@ -164,6 +167,35 @@ app.delete('/api/Employee/:id',auth('HR'), (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// Добавления из файла CSV
+const csv = require('csv-parse/sync').parse;
+
+app.post('/api/Employees/bulk', auth('HR'), (req, res) => {
+  try {
+    const arr = parse(req.body, {
+    columns: true,
+      skip_empty_lines: true,
+      trim: true,
+     });
+
+    const data = readData();
+    let maxId = data.reduce((m, e) => Math.max(m, e.id), 0);
+
+    const prepared = arr.map(e => ({
+      ...e,
+      id: ++maxId,
+      stack: e.stack ? e.stack.split('|') : [],
+    }));
+
+    data.unshift(...prepared);
+    writeData(data);
+    res.status(201).json({ added: prepared.length });
+  } catch (err) {
+    res.status(400).json({ message: 'Ошибка парсинга CSV' });
+  }
+});
+
 
 
 /* ---------- Аутентификация ---------- */

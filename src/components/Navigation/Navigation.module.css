@@ -1,6 +1,6 @@
 .navigation {
   height: 77px;
-  padding: 0 180px;
+  padding: 24px 180px;
   display: flex;
   align-items: center;
 }
@@ -37,7 +37,7 @@
 
 @media screen and (max-width: 500px) {
   .navigation {
-    padding: 0 48px;
+    padding: 12px 48px;
   }
 
   .navigation__name {
@@ -51,7 +51,7 @@
 @media screen and (max-width: 320px) {
 
   .navigation {
-    padding: 0 24px;
+    padding: 12px 24px;
     height: 44px;
   }
 

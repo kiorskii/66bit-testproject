@@ -1,3 +1,4 @@
+import Footer from "../components/Footer/Footer"
 import Header from "../components/Header/Header"
 import List from "../components/List/List"
 import Navigation from "../components/Navigation/Navigation"
@@ -11,6 +12,7 @@ const Main = () => {
       <Navigation />
       <Search />
       <List />
+      <Footer />
     </EmployeeProvider>
   )
 }

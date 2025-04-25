@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from './Person.module.css';
 import { useNavigate } from 'react-router-dom';
 import EditEmployeeModal from '../EditEmployeeModal/EditEmployeeModal';
+import { Button, Space } from 'antd';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 
 const Person = ({ employee }) => {
@@ -62,15 +64,25 @@ const Person = ({ employee }) => {
       </div>
 
       <div className={styles.person__mainInfo}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h3 className={styles.person__title}>Основная информация</h3>
-
-        <button className={styles.person__editButton} onClick={openModal}>
-        Редактировать
-      </button>
-      {/* Кнопка удаления */}
-      <button className={styles.deleteButton} onClick={() => setShowConfirm(true)}>
+      <Space size="middle" style={{ marginBottom: 24 }}>
+    <Button
+      icon={<EditOutlined />}
+      onClick={openModal}
+      type="default"
+      size="middle"
+    >
+      Редактировать
+    </Button>
+    <Button         danger
+        icon={<DeleteOutlined />}
+        size="middle" onClick={() => setShowConfirm(true)}>
         Удалить
-      </button>
+      </Button>
+  </Space>
+        </div>
+        
 
 
         <ul className={styles.person__infoList}>

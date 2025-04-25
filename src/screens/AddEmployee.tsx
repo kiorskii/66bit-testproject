@@ -1,189 +1,93 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchEmployees } from '../services/api';
+import { Form, Input, Select, Checkbox, DatePicker, Button, message, Card } from 'antd';
+import dayjs from 'dayjs';
 import { formatPhone } from '../services/phone_formatter';
+import { fetchEmployees } from '../services/api';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import Navigation from '../components/Navigation/Navigation';
 
-const AddEmployee = () => {
+const techOptions = ['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'];
+const posOptions  = ['Frontend', 'Backend', 'Аналитик', 'Менеджер', 'Дизайнер'];
+
+export default function AddEmployee() {
+  const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    gender: 'Мужчина',
-    position: 'Менеджер',
-    stack: ['Word'],
-    birthdate: '',
-    dateOfEmployment: '',
-    photo: ''
-  });
 
-  const positions = ['Frontend', 'Backend', 'Аналитик', 'Менеджер', 'Дизайнер'];
-  const technologies = ['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'];
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    if (name === 'phone') {
-      // Если изменяется телефон, форматируем его
-      setFormData((prev) => ({
-        ...prev,
-        [name]: formatPhone(value)
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value
-      }));
-    }
-  };
-
-  const handleTechChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = e.target;
-    setFormData((prev) => {
-      const updatedStack = checked
-        ? [...prev.stack, value]
-        : prev.stack.filter((tech) => tech !== value);
-      return { ...prev, stack: updatedStack };
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const onFinish = async values => {
     const token = localStorage.getItem('token');
+    const payload = {
+      ...values,
+      phone: formatPhone(values.phone),
+      birthdate: values.birthdate.format('YYYY-MM-DD'),
+      dateOfEmployment: values.dateOfEmployment.format('YYYY-MM-DD'),
+    };
+
     try {
-      const response = await fetch('http://localhost:3001/api/Employee', {
+      const r = await fetch('http://localhost:3001/api/Employee', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify(payload),
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to add employee');
-      }
-
-      // Обновляем список сотрудников после добавления нового
-      await fetchEmployees();
-      navigate('/employees');  // редирект на страницу списка сотрудников
-    } catch (error) {
-      console.error(error);
+      if (!r.ok) throw new Error();
+      await fetchEmployees();             // обновим кеш/контекст при необходимости
+      message.success('Сотрудник добавлен');
+      navigate('/employees');
+    } catch {
+      message.error('Не удалось добавить');
     }
   };
 
   return (
-    <div>
-      <h2>Добавить сотрудника</h2>
-      <form onSubmit={handleSubmit}>
-        {/* Форма для ФИО, телефона и других полей */}
-        <div>
-          <label htmlFor="name">ФИО</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="phone">Телефон</label>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="gender">Пол</label>
-          <select
-            id="gender"
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-          >
-            <option value="Мужчина">Мужчина</option>
-            <option value="Женщина">Женщина</option>
-          </select>
-        </div>
+    <>
+      <Header />
+      <Navigation />
+      <Card title="Добавить сотрудника" style={{ maxWidth: 1000, margin: '24px auto' }}>
+        <Form form={form} layout="vertical" onFinish={onFinish} initialValues={{ gender: 'Мужчина', position: 'Менеджер', stack: ['Word'] }}>
+          <Form.Item name="name" label="ФИО" rules={[{ required: true, min: 5 }]}>
+            <Input />
+          </Form.Item>
 
-        {/* Должность - выпадающий список */}
-        <div>
-          <label htmlFor="position">Должность</label>
-          <select
-            id="position"
-            name="position"
-            value={formData.position}
-            onChange={handleChange}
-          >
-            {positions.map((position) => (
-              <option key={position} value={position}>
-                {position}
-              </option>
-            ))}
-          </select>
-        </div>
+          <Form.Item name="phone" label="Телефон" rules={[{ required: true }]}>
+        <Input  placeholder="+7 (___) ___-__-__"  maxLength={18}  onChange={e => form.setFieldValue('phone', formatPhone(e.target.value))}/>
+          </Form.Item>
 
-        {/* Технологии - чекбоксы */}
-        <div>
-          <label>Технологии</label>
-          {technologies.map((tech) => (
-            <div key={tech}>
-              <input
-                type="checkbox"
-                id={tech}
-                name="stack"
-                value={tech}
-                checked={formData.stack.includes(tech)}
-                onChange={handleTechChange}
-              />
-              <label htmlFor={tech}>{tech}</label>
-            </div>
-          ))}
-        </div>
+          <Form.Item name="gender" label="Пол">
+            <Select>
+              <Select.Option value="Мужчина">Мужчина</Select.Option>
+              <Select.Option value="Женщина">Женщина</Select.Option>
+            </Select>
+          </Form.Item>
 
-        {/* Даты */}
-        <div>
-          <label htmlFor="birthdate">Дата рождения</label>
-          <input
-            type="date"
-            id="birthdate"
-            name="birthdate"
-            value={formData.birthdate}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="dateOfEmployment">Дата устройства на работу</label>
-          <input
-            type="date"
-            id="dateOfEmployment"
-            name="dateOfEmployment"
-            value={formData.dateOfEmployment}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="photo">Фото</label>
-          <input
-            type="text"
-            id="photo"
-            name="photo"
-            value={formData.photo}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Добавить</button>
-      </form>
-    </div>
+          <Form.Item name="position" label="Должность">
+            <Select options={posOptions.map(p => ({ label: p, value: p }))} />
+          </Form.Item>
+
+          <Form.Item name="stack" label="Технологии">
+            <Checkbox.Group options={techOptions} />
+          </Form.Item>
+
+          <Form.Item name="birthdate" label="Дата рождения" rules={[{ required: true }]}>
+            <DatePicker format="DD.MM.YYYY" style={{ width: '100%' }} />
+          </Form.Item>
+
+          <Form.Item name="dateOfEmployment" label="Дата устройства" rules={[{ required: true }]}>
+            <DatePicker format="DD.MM.YYYY" style={{ width: '100%' }} />
+          </Form.Item>
+
+          <Form.Item name="photo" label="Фото (URL)" rules={[{ required: true }]}>
+            <Input />
+          </Form.Item>
+
+          <Form.Item>
+            <Button type="primary" htmlType="submit" block>
+              Добавить
+            </Button>
+          </Form.Item>
+        </Form>
+      </Card>
+      <Footer />
+    </>
   );
-};
-
-export default AddEmployee;
+}

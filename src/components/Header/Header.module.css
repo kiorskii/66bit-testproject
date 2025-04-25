@@ -8,6 +8,10 @@
   box-shadow: 0 5px 8px rgba(57, 113, 164, 0.25);
 }
 
+.header__img {
+  height: 150px;
+}
+
 .header__info {
   display: flex;
   column-gap: 48px;
@@ -47,6 +51,15 @@
   transition: transform .25s ease-in-out;
 }
 
+.button__logout {
+  padding: 10px !important;
+  font-size: 12px !important;
+}
+.button__add {
+  padding: 10px !important;
+  font-size: 12px !important;
+}
+
 
 .light::after {
   background-image: url(/src/assets/Moon.svg);
@@ -71,6 +84,14 @@
   .header {
     padding: 0 48px;
   }
+
+  .button__logout {
+    font-size: 12px !important;
+  }
+
+  .header__info {
+    column-gap: 16px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -81,7 +102,7 @@
   }
 
   .header__img {
-    width: 52px;
+    height: 100px;
   }
 
   .header__button {

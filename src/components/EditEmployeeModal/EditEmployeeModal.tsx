@@ -1,187 +1,84 @@
-import React, { useState, useEffect } from 'react';
-import { formatPhone } from '../../services/phone_formatter';
+import { useEffect } from 'react';
+import { Modal, Form, Input, Select, Checkbox, DatePicker, message } from 'antd';
+import dayjs from 'dayjs';
 import { updateEmployee } from '../../services/api';
-import styles from './EditEmployeeModal.module.css';
+import { formatPhone } from '../../services/phone_formatter';
 
-const convertDateToInputFormat = (dateStr: string) => {
-  const [day, month, year] = dateStr.split('.');
-  return `${year}-${month}-${day}`;
-};
+const { Option } = Select;
+const techOptions = ['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'];
+const posOptions  = ['Frontend', 'Backend', 'Аналитик', 'Менеджер', 'Дизайнер'];
 
-const EditEmployeeModal = ({ isOpen, closeModal, employee, refreshData }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    gender: 'Мужчина',
-    position: 'Менеджер',
-    stack: ['Word'],
-    birthdate: '',
-    dateOfEmployment: '',
-    photo: ''
-  });
+export default function EditEmployeeModal({ isOpen, closeModal, employee, refreshData }) {
+  const [form] = Form.useForm();
 
-  // Открытие и закрытие модального окна
+  // заполняем форму при открытии
   useEffect(() => {
-    if (employee) {
-      setFormData({
-        name: employee.name,
-        phone: formatPhone(employee.phone), // форматируем номер
-        gender: employee.gender,
-        position: employee.position,
-        stack: employee.stack,
-        birthdate: convertDateToInputFormat(employee.birthdate), // Преобразуем дату в формат для поля input
-        dateOfEmployment: convertDateToInputFormat(employee.dateOfEmployment), // Преобразуем дату в формат для поля input
-        photo: employee.photo
+    if (isOpen && employee) {
+      form.setFieldsValue({
+        ...employee,
+        phone: formatPhone(employee.phone),
+        birthdate: dayjs(employee.birthdate, 'DD.MM.YYYY'),
+        dateOfEmployment: dayjs(employee.dateOfEmployment, 'DD.MM.YYYY'),
       });
     }
-  }, [employee, isOpen]);
+  }, [isOpen, employee]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value
-    }));
-    
-  };
-
-  const handleTechChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = e.target;
-    setFormData((prev) => {
-      const updatedStack = checked
-        ? [...prev.stack, value]
-        : prev.stack.filter((tech) => tech !== value);
-      return { ...prev, stack: updatedStack };
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Преобразуем даты обратно в строку перед отправкой
-    const updatedData = {
-      ...formData
-    };
-
+  const onOk = async () => {
     try {
-      await updateEmployee(employee.id, updatedData);  // Отправляем обновленные данные
-      refreshData();  // Обновляем данные на странице
-      closeModal();  // Закрываем модальное окно
-    } catch (error) {
-      alert('Не удалось обновить информацию');
+      const values = await form.validateFields();
+      const payload = {
+        ...values,
+        birthdate: values.birthdate.format('YYYY-MM-DD'), 
+        dateOfEmployment: values.dateOfEmployment.format('YYYY-MM-DD'),
+      };
+      await updateEmployee(employee.id, payload);
+      refreshData(payload);
+      message.success('Изменения сохранены');
+      closeModal();
+    } catch (err) {
+      /* validation errors или сетевые — ничего не делаем */
     }
   };
 
   return (
-    <div className={`${styles.modal} ${isOpen ? styles.open : ''}`}>
-      <div className={styles.modalContent}>
-        <h2>Редактировать информацию</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">ФИО</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="phone">Телефон</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="gender">Пол</label>
-            <select
-              id="gender"
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-            >
-              <option value="Мужчина">Мужчина</option>
-              <option value="Женщина">Женщина</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="position">Должность</label>
-            <select
-              id="position"
-              name="position"
-              value={formData.position}
-              onChange={handleChange}
-            >
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
-              <option value="Аналитик">Аналитик</option>
-              <option value="Менеджер">Менеджер</option>
-              <option value="Дизайнер">Дизайнер</option>
-            </select>
-          </div>
-          <div>
-            <label>Технологии</label>
-            {['CSharp', 'React', 'Java', 'PHP', 'Figma', 'Word'].map((tech) => (
-              <div key={tech}>
-                <input
-                  type="checkbox"
-                  id={tech}
-                  name="stack"
-                  value={tech}
-                  checked={formData.stack.includes(tech)}
-                  onChange={handleTechChange}
-                />
-                <label htmlFor={tech}>{tech}</label>
-              </div>
-            ))}
-          </div>
-          <div>
-            <label htmlFor="birthdate">Дата рождения</label>
-            <input
-              type="date"
-              id="birthdate"
-              name="birthdate"
-              value={formData.birthdate}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="dateOfEmployment">Дата устройства на работу</label>
-            <input
-              type="date"
-              id="dateOfEmployment"
-              name="dateOfEmployment"
-              value={formData.dateOfEmployment}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="photo">Фото</label>
-            <input
-              type="text"
-              id="photo"
-              name="photo"
-              value={formData.photo}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.modalActions}>
-            <button type="submit">Сохранить</button>
-            <button type="button" onClick={closeModal}>Закрыть</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-};
+    <Modal open={isOpen} onCancel={closeModal} onOk={onOk} title="Редактировать сотрудника" destroyOnClose>
+      <Form layout="vertical" form={form}>
+        <Form.Item name="name" label="ФИО" rules={[{ required: true, min: 5 }]}>
+          <Input />
+        </Form.Item>
 
-export default EditEmployeeModal;
+        <Form.Item name="phone" label="Телефон" rules={[{ required: true }]}>
+         <Input  placeholder="+7 (___) ___-__-__"  maxLength={18}  onChange={e => form.setFieldsValue({ phone: formatPhone(e.target.value) })}/>        </Form.Item>
+
+        <Form.Item name="gender" label="Пол">
+          <Select>
+            <Option value="Мужчина">Мужчина</Option>
+            <Option value="Женщина">Женщина</Option>
+          </Select>
+        </Form.Item>
+
+        <Form.Item name="position" label="Должность">
+          <Select>
+            {posOptions.map(p => <Option key={p}>{p}</Option>)}
+          </Select>
+        </Form.Item>
+
+        <Form.Item name="stack" label="Технологии">
+          <Checkbox.Group options={techOptions} />
+        </Form.Item>
+
+        <Form.Item name="birthdate" label="Дата рождения" rules={[{ required: true }]}>
+          <DatePicker format="DD.MM.YYYY" style={{ width: '100%' }} />
+        </Form.Item>
+
+        <Form.Item name="dateOfEmployment" label="Дата устройства" rules={[{ required: true }]}>
+          <DatePicker format="DD.MM.YYYY" style={{ width: '100%' }} />
+        </Form.Item>
+
+        <Form.Item name="photo" label="Фото (URL)">
+          <Input />
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
+}

@@ -1,44 +1,38 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './screens/Login';
-import ProtectedRoute from './components/ProtectedRoute';
-import { AuthProvider } from './contexts/AuthContext';
-import Employees from './screens/Employees';
-import Card from './screens/Card';
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
-import Main from './screens/Main';
-import AddEmployee from './screens/AddEmployee';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 
-function App() {
-  return (
-    <ThemeProvider>
-  <AuthProvider>
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/employees"
-          element={
-            <ProtectedRoute>
-              <Employees />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/employee/:id"
-          element={
-            <ProtectedRoute>
-              <Card />
-            </ProtectedRoute>
-          }
-        />
-                  <Route path="/add-employee" element={<AddEmployee />} /> {/* новый маршрут */}
+import Login        from './screens/Login';
+import Main         from './screens/Main';
+import Employees    from './screens/Employees';
+import Card         from './screens/Card';
+import AddEmployee  from './screens/AddEmployee';
+import ImportEmployees from './screens/ImportEmployees';
 
-        <Route path="*" element={<Main />} />
-      </Routes>
-    </Router>
-  </AuthProvider>
-</ThemeProvider>
-  );
+function ProtectedRoute() {
+  const { user } = useAuth();
+  return user ? <Outlet /> : <Navigate to="/login" replace />;
 }
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Router>
+        <AuthProvider>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+
+            <Route element={<ProtectedRoute />}>
+              <Route path="/"            element={<Main />} />
+              <Route path="/employees"   element={<Employees />} />
+              <Route path="/employee/:id"element={<Card />} />
+              <Route path="/add-employee"element={<AddEmployee />} />
+              <Route path="/import-employees" element={<ImportEmployees />} />
+              <Route path="*"            element={<Main />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
+      </Router>
+    </ThemeProvider>
+  );
+}

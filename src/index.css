@@ -64,3 +64,33 @@ a {
     border-radius: 6px;
   }
 }
+
+/* 1. Корень и тело растягиваем на всю высоту */
+html,
+body,
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Всё, что не Header и не Footer, пусть заполняет промежуток */
+main.page-content {
+  flex: 1 0 auto;          /* растягивается */
+}
+
+/* 3. Футер автоматически прилипнет книзу */
+footer {
+  margin-top: auto;        /* главное свойство «липкости» */
+}
+
+
+@media screen and (max-width: 900px) {
+  html,
+body,
+#root {
+  height: unset;
+  display: unset;
+  flex-direction: unset;
+}
+}

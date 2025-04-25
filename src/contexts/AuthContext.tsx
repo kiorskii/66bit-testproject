@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { login as loginApi, initAuthHeader, User } from '../services/auth';
-import API from '../services/auth'; 
+import API from '../services/auth';
+import { useNavigate } from 'react-router-dom'; 
 
 
 interface AuthCtx {
@@ -13,6 +14,7 @@ const AuthContext = createContext<AuthCtx>(null!);
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const navigate = useNavigate();
   
   const [user, setUser] = useState<User | null>(
     () => JSON.parse(localStorage.getItem('user') || 'null')   
@@ -30,6 +32,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('user');
     delete API.defaults.headers.common['Authorization'];   
     setUser(null);
+    navigate('/login');
   };
 
   return (

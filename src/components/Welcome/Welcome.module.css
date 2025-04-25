@@ -5,7 +5,7 @@
   flex-direction: column;
   row-gap: 24px;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .button {
@@ -17,10 +17,38 @@
   background-color: #155DA4;
 }
 
+.cardsContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  width: 1000px;
+  height: 500px;
+}
+
+.card {
+  border: 2px solid #F2F2F2;
+  border-radius: 8px;
+  padding: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+  height: 48%;
+  box-shadow: 0 5px 8px rgba(57, 113, 164, 0.25);
+  font-size: 14px !important;
+  align-items: ;
+  justify-content: center;
+  display: flex;
+}
+
+.card:hover {
+  border: 2px solid #155DA4;
+  box-shadow: 0 5px 8px rgba(57, 113, 164, 0.25);
+  background-color: #F2F2F2;
+}
+
 @media screen and (max-width: 500px) {
   .title {
     font-size: 28px;
   }
-
-
 }
