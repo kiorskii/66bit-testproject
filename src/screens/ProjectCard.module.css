@@ -1,0 +1,63 @@
+.aiBtn {
+  position: relative; /* нужно, чтобы ::after размещался поверх */
+  overflow: hidden; /* скрываем расширяющееся кольцо */
+}
+
+/* оранжевое пульсирующее «кольцо» */
+.aiBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px; /* совпадает с border-radius ant-кнопки */
+  background: rgba(250, 140, 22, 0.35); /* #fa8c16 с прозрачностью */
+  animation: aiPulse 5s infinite;
+  pointer-events: none; /* не мешает клику по кнопке */
+}
+
+@keyframes aiPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(2.4);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ------- общее плавное появление вверх ------- */
+.fadeIn1 {
+  animation: fadeSlide 0.4s ease-out both;
+}
+.fadeIn2 {
+  animation: fadeSlide 1.4s ease-out both;
+}
+.fadeIn3 {
+  animation: fadeSlide 2.4s ease-out both;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delBtn {
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.delBtn:hover {
+  background: #fff1f0; /* мягкий красный фон из AntD palette */
+  color: #ff4d4f; /* иконка станет ярко-красной */
+  transition: all 0.3s ease-in-out;
+}

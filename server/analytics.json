@@ -1,0 +1,71 @@
+{
+  "weekly": [
+    {
+      "week": "2025-01-06",
+      "avgLoad": 62,
+      "velocity": 47,
+      "risk": 34,
+      "stack": { "Backend": 5, "Frontend": 4, "QA": 2, "Analyst": 1 },
+      "absences": 1,
+      "cost": 14200,
+      "budget": 16000
+    },
+
+    {
+      "week": "2025-01-13",
+      "avgLoad": 65,
+      "velocity": 52,
+      "risk": 38,
+      "stack": { "Backend": 5, "Frontend": 4, "QA": 2, "Analyst": 1 },
+      "absences": 0,
+      "cost": 15000,
+      "budget": 16000
+    },
+
+    {
+      "week": "2025-03-24",
+      "avgLoad": 71,
+      "velocity": 54,
+      "risk": 42,
+      "stack": { "Backend": 6, "Frontend": 4, "QA": 3, "Analyst": 1 },
+      "absences": 2,
+      "cost": 16800,
+      "budget": 18000
+    }
+  ],
+
+  "monthly": [
+    {
+      "month": "2025-01",
+      "avgLoad": 61,
+      "velocity": 201,
+      "risk": 32,
+      "stack": { "Backend": 20, "Frontend": 15, "QA": 8, "Analyst": 4 },
+      "absences": 3,
+      "cost": 61000,
+      "budget": 67000
+    },
+
+    {
+      "month": "2025-02",
+      "avgLoad": 67,
+      "velocity": 219,
+      "risk": 39,
+      "stack": { "Backend": 21, "Frontend": 15, "QA": 9, "Analyst": 5 },
+      "absences": 4,
+      "cost": 64500,
+      "budget": 70000
+    },
+
+    {
+      "month": "2025-03",
+      "avgLoad": 70,
+      "velocity": 228,
+      "risk": 43,
+      "stack": { "Backend": 22, "Frontend": 16, "QA": 9, "Analyst": 5 },
+      "absences": 2,
+      "cost": 68300,
+      "budget": 72000
+    }
+  ]
+}

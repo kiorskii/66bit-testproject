@@ -1,0 +1,60 @@
+/* ───────── Круговая пульсация ───────── */
+.pulseBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+}
+
+.pulseBtn::after {               /* «кольцо» поверх кнопки */
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(22, 119, 255, .35);      /* тот же ant-primary, но полупрозрачный */
+  animation: pulse 2s infinite;
+  pointer-events: none;                     /* кликаем сквозь псевдо-элемент */
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);   opacity: .7; }
+  70%  { transform: scale(2.4); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ───────── Всплывающий «Нужна помощь?» ───────── */
+.helpTip {
+  position: fixed;
+  right: 100px;          /* чуть левее кнопки */
+  bottom: 36px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  pointer-events: none;
+  animation: fadeIn .4s ease-out,
+             fadeOut .4s ease-in 4s forwards;  /* исчезает через 4 сек */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fadeOut {
+  to   { opacity: 0; transform: translateY(10px); }
+}
+
+/* уже существующее  .pulseBtn  оставляем без изменений */
+.pulseBtnXL {
+  width: 64px !important;       /* диаметр кнопки */
+  height: 64px;
+  font-size: 32px;      /* размер иконки */
+}
+
+/* чтобы псевдо-кольцо совпадало по центру */
+.pulseBtnXL::after {
+  border-radius: 50%;
+}
+

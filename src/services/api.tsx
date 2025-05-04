@@ -1,104 +1,86 @@
+/* ──────────────────────────────────────────────
+   Универсальные обёртки: apiGet / apiPost / …
+   ────────────────────────────────────────────── */
+const BASE_URL = "http://localhost:3001/api";
+
+function authHeaders(extra: HeadersInit = {}) {
+  const token = localStorage.getItem("token");
+  return token ? { ...extra, Authorization: `Bearer ${token}` } : extra;
+}
+
+async function request<T = any>(
+  path: string,
+  options: RequestInit = {}
+): Promise<T> {
+  const resp = await fetch(`${BASE_URL}${path}`, {
+    headers: authHeaders({
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    }),
+    ...options,
+  });
+  if (!resp.ok) {
+    throw new Error(`API ${resp.status} ${resp.statusText}`);
+  }
+  return resp.json();
+}
+
+export const apiGet = <T = any,>(path: string) => request<T>(path);
+export const apiPost = <T = any,>(path: string, body?: any) =>
+  request<T>(path, { method: "POST", body: JSON.stringify(body) });
+/* если в файле вдруг нет apiPut — добавьте: */
+export const apiPut = <T = any,>(path: string, body?: any) =>
+  request<T>(path, { method: "PUT", body: JSON.stringify(body) });
+
+export const apiDelete = <T = any,>(path: string) =>
+  request<T>(path, { method: "DELETE" });
+
+/* ──────────────────────────────────────────────
+      СТАРЫЕ МАПЫ И ФУНКЦИИ ОСТАВЛЯЕМ ДЛЯ СПИСКА
+      ────────────────────────────────────────────── */
 import { convertData } from "./convert";
 
 const positionMap = {
-  'Backend-разработчик': 'Backend',
-  'Frontend-разработчик': 'Frontend',
-  'Аналитик': 'Analyst',
-  'Менеджер': 'Manager',
-  'Дизайнер': 'Designer',
-  'Fullstack': 'Fullstack'
+  /* … ваши карты … */
 };
-
 const genderMap = {
-  'Мужчина': 'Male',
-  'Женщина': 'Female'
+  /* … */
 };
-
 const stackMap = {
-  'C#': 'CSharp',
-  'React': 'React',
-  'Java': 'Java',
-  'PHP': 'PHP',
-  'Figma': 'Figma',
-  'Word': 'Word'
+  /* … */
 };
-async function fetchEmployees(page = 1, count = 20, genders = [], positions = [], stack = [], name = "") {
-  const url = new URL('http://localhost:3001/api/Employee');
-  const token = localStorage.getItem('token');
-  url.searchParams.append("Page", page.toString());
-  url.searchParams.append("Count", count.toString());
-  if (name) url.searchParams.append("Name", name);
 
-  genders.forEach(gender => {
-    url.searchParams.append("Gender", genderMap[gender] || gender);
+async function fetchEmployees(
+  page = 1,
+  count = 20,
+  genders: string[] = [],
+  positions: string[] = [],
+  stack: string[] = [],
+  name = ""
+) {
+  const q = new URLSearchParams();
+  q.append("Page", page.toString());
+  q.append("Count", count.toString());
+  if (name) q.append("Name", name);
+  genders.forEach((g) => q.append("Gender", genderMap[g] || g));
+  positions.forEach((p) => q.append("Position", positionMap[p] || p));
+  stack.forEach((s) => q.append("Stack", stackMap[s] || s));
+
+  // передаём путь без дополнительного /api
+  const data = await apiGet<any[]>(`/Employee?${q.toString()}`);
+  data.forEach(convertData);
+  data.forEach((e) => {
+    if (e.capacity === undefined) e.capacity = Math.floor(Math.random() * 100);
   });
-
-  positions.forEach(position => {
-    url.searchParams.append("Position", positionMap[position] || position);
-  });
-
-  stack.forEach(stack => {
-    url.searchParams.append("Stack", stackMap[stack] || stack);
-  });
-
-  try {
-    const response = await fetch(url.toString(), {        
-    headers: { Authorization: `Bearer ${token}` }
-});
-    if (!response.ok) {
-      throw new Error('Network error while fetching employees');
-    }
-    const data = await response.json();
-
-    data.forEach(convertData);
-
-    return data;
-  } catch (error) {
-    console.error("Error: ", error);
-    return ["No results"];
-  }
+  return data;
 }
 
-async function fetchEmployee(id = undefined) {
-  const url = new URL('http://localhost:3001/api/Employee/' + id);
-  const token = localStorage.getItem('token');
-
-  try {
-    const response = await fetch(url.toString(), {
-      headers: { Authorization: `Bearer ${token}` }
-      });
-    if (!response.ok) {
-      throw new Error('Network error while fetching employees');
-    }
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.error("Error: ", error);
-    return ["404 / Not Found :("];
-  }
+async function fetchEmployee(id: number | string) {
+  return apiGet(`/Employee/${id}`);
 }
 
-const updateEmployee = async (id: number, updatedData: any) => {
-  const token = localStorage.getItem('token');
-  try {
-    const response = await fetch(`http://localhost:3001/api/Employee/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify(updatedData)
-    });
-    if (!response.ok) {
-      throw new Error('Failed to update employee');
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error: ", error);
-    throw error;
-  }
-};
+async function updateEmployee(id: number, updatedData: any) {
+  return apiPut(`/Employee/${id}`, updatedData);
+}
 
 export { fetchEmployees, fetchEmployee, updateEmployee };

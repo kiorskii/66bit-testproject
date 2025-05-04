@@ -10,12 +10,12 @@
     ],
     "birthdate": "22 апреля 2025",
     "dateOfEmployment": "23 апреля 2025",
-    "photo": "https://music.yandex.ru/",
+    "photo": "",
     "id": 105
   },
   {
     "name": "1233123",
-    "phone": "+7 (222) --",
+    "phone": "+7 (912) 999-39-42",
     "gender": "Мужчина",
     "position": "Backend",
     "stack": [
@@ -38,6 +38,7 @@
     "stack": [
       "Figma"
     ],
+    "capacity": 50,
     "birthdate": "23 апреля 1990",
     "dateOfEmployment": "25 января 2018"
   },
@@ -52,7 +53,8 @@
       "React"
     ],
     "birthdate": "19 июня 1111",
-    "dateOfEmployment": "19 октября 1111"
+    "dateOfEmployment": "19 октября 1111",
+    "notes": "12312312"
   },
   {
     "id": 97,

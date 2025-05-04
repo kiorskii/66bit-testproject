@@ -48,7 +48,7 @@
   width: 20px;
   height: 20px;
   border-radius: 15px;
-  transition: transform .25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 }
 
 .button__logout {
@@ -59,7 +59,6 @@
   padding: 10px !important;
   font-size: 12px !important;
 }
-
 
 .light::after {
   background-image: url(/src/assets/Moon.svg);
@@ -95,7 +94,6 @@
 }
 
 @media screen and (max-width: 320px) {
-
   .header {
     padding: 0 24px;
     height: 54px;
